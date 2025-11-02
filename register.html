@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LibraTrack — Register</title>
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100..900;1,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="index-page d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/LibraTrack-logo.png" alt="LibraTrack Logo" style="width:45px; height:100px;">
+        <h1 class="sitename" style="font-size: 24px;">LibraTrack</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="register.html" class="active">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown">
+                <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted d-none d-sm-block" href="index.html#menu">Browse Catalog</a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main flex-grow-1">
+    <section class="page-bg d-flex align-items-center justify-content-center py-5">
+      <div class="card register-card border-0 shadow-sm mx-auto" style="max-width: 780px; width: 100%;">
+        <div class="card-body p-5">
+          <div class="text-center mb-4">
+            <img src="assets/img/LibraTrack-logo.png" alt="LibraTrack Logo" width="88" height="88">
+          </div>
+
+          <h3 class="form-big-label text-center mb-4">Create your account</h3>
+
+          <form id="registerForm" novalidate>
+            <div class="row mb-3 g-3">
+              <div class="col-md-5">
+                <label for="firstName" class="form-label-login-register">First Name</label>
+                <input type="text" class="form-control" id="firstName"/>
+                <div class="invalid-feedback" id="firstNameError"></div>
+              </div>
+
+              <div class="col-md-5">
+                <label for="lastName" class="form-label-login-register">Last Name</label>
+                <input type="text" class="form-control" id="lastName"/>
+                <div class="invalid-feedback" id="lastNameError"></div>
+              </div>
+
+              <div class="col-md-2">
+                <label for="suffix" class="form-label-login-register">Suffix</label>
+                <select class="form-select form-select-dropdown" id="suffix" required>
+                  <option value="">Select</option>
+                  <option>N/A</option>
+                  <option>Jr.</option>
+                  <option>Sr.</option>
+                  <option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option>
+                  <option>VI</option><option>VII</option><option>VIII</option><option>IX</option><option>X</option>
+                  <option>MD</option><option>PhD</option><option>Esq.</option><option>CPA</option>
+                </select>
+                <div class="invalid-feedback" id="suffixError"></div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="middleName" class="form-label-login-register">Middle Name (optional)</label>
+              <input type="text" class="form-control" id="middleName"/>
+              <div class="invalid-feedback" id="middleNameError"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label-login-register">Email</label>
+              <input type="email" class="form-control" id="email"/>
+              <div class="invalid-feedback" id="emailError"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label-login-register">Password</label>
+              <div class="password-wrapper position-relative">
+                <input type="password" class="form-control" id="password" required />
+                <div class="invalid-feedback" id="passwordError"></div>
+                <span id="togglePassword" class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;">
+                  <i class="bi bi-eye" id="eyeIconPassword" aria-hidden="true"></i>
+                  <span class="visually-hidden">Show/Hide password</span>
+                </span>
+              </div>
+              <small class="text-secondary d-block mt-1" style="color:#9c9c9c !important;"></small>
+            </div>
+
+            <div class="mb-4">
+              <label for="confirmPassword" class="form-label-login-register">Confirm Password</label>
+              <div class="password-wrapper position-relative">
+                <input type="password" class="form-control" id="confirmPassword" required />
+                <div class="invalid-feedback" id="confirmPasswordError"></div>
+                <span id="toggleConfirmPassword" class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;">
+                  <i class="bi bi-eye" id="eyeIconConfirm" aria-hidden="true"></i>
+                  <span class="visually-hidden">Show/Hide confirm password</span>
+                </span>
+              </div>
+            </div>
+
+            <button id="submitBtn" type="submit" class="btn btn-primary rounded-pill py-2 form-button-label w-100">
+              <span class="btn-text">Register</span>
+              <span class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <div class="text-center mt-4">
+            <a href="login.html" class="form-label-create">Already have an account? Login</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer mt-auto">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">LibraTrack</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span id="year"></span> <strong class="px-1 sitename">LibraTrack</strong> — All Rights Reserved</p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content success-modal text-center p-4">
+      <div class="success-icon mb-3">
+        <i class="bi bi-check-circle-fill"></i>
+      </div>
+      <h5 class="modal-title fw-bold">Registration Successful</h5>
+      <p id="successMsg" class="mb-0"></p>
+
+      <div class="modal-actions d-flex justify-content-center gap-4 mt-2">
+        <button type="button" class="btn btn-close-modal" data-bs-dismiss="modal">Close</button>
+        <button id="goLoginBtn" type="button" class="btn btn-login-modal">Go to Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Site JS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Page JS -->
+  <script>
+    // ---------- helpers ----------
+    const setErr = (id, msg) => {
+      const inp = document.getElementById(id);
+      const err = document.getElementById(id + 'Error');
+      inp?.classList.add('is-invalid');
+      if (err) err.textContent = msg;
+    };
+    const clearErrs = () => {
+      document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+      document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+    };
+    const toggleBtn = (loading) => {
+      const btn = document.getElementById('submitBtn');
+      const spinner = btn.querySelector('.spinner-border');
+      if (loading) { btn.setAttribute('disabled','disabled'); spinner.classList.remove('d-none'); }
+      else { btn.removeAttribute('disabled'); spinner.classList.add('d-none'); }
+    };
+    const cleanPwd = s => (s || "")
+      .normalize("NFKC")
+      .replace(/[\u200B-\u200D\u2060]/g, "")
+      .replace(/\u00A0/g, " ")
+      .trim();
+
+    // ---------- validation + submit ----------
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearErrs();
+
+      if (location.protocol === 'file:') {
+        alert('Open this page via http://localhost/LibraTrack/register.html (through XAMPP), not as a local file.');
+        return;
+      }
+
+      // fields
+      const firstName = document.getElementById('firstName');
+      const lastName  = document.getElementById('lastName');
+      const middle    = document.getElementById('middleName');
+      const suffix    = document.getElementById('suffix');
+      const email     = document.getElementById('email');
+      const password  = document.getElementById('password');
+      const confirm   = document.getElementById('confirmPassword');
+
+      // patterns
+      const onlyLettersSpace = /^[A-Za-z\s]+$/;
+      const onlyLetters = /^[A-Za-z]+$/;
+      const onlyNumbers = /^[0-9]+$/;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const hasUppercase = /[A-Z]/;
+      const hasSpecial = /[^A-Za-z0-9]/;
+
+      let ok = true;
+
+      // names
+      if (!firstName.value.trim()) { setErr('firstName','First name is required'); ok = false; }
+      else if (!onlyLettersSpace.test(firstName.value.trim())) { setErr('firstName','First name must not contain numbers or special characters'); ok = false; }
+
+      if (!lastName.value.trim()) { setErr('lastName','Last name is required'); ok = false; }
+      else if (!onlyLettersSpace.test(lastName.value.trim())) { setErr('lastName','Last name must not contain numbers or special characters'); ok = false; }
+
+      if (middle.value.trim() && !onlyLettersSpace.test(middle.value.trim())) { setErr('middleName','Middle name must not contain numbers or special characters'); ok = false; }
+
+      if (!suffix.value) { setErr('suffix','Select suffix'); ok = false; }
+
+      // email
+      if (!email.value.trim()) { setErr('email','Email address is required'); ok = false; }
+      else if (!emailPattern.test(email.value.trim())) { setErr('email','Invalid email address'); ok = false; }
+
+      // passwords
+      password.value = cleanPwd(password.value);
+      confirm.value  = cleanPwd(confirm.value);
+      const pwd = password.value;
+      const cpw = confirm.value;
+
+      if (!pwd) { setErr('password','Password is required'); ok = false; }
+      else if (pwd.length < 8 || !hasUppercase.test(pwd) || !hasSpecial.test(pwd) || onlyLetters.test(pwd) || onlyNumbers.test(pwd)) {
+        setErr('password','Password must have at least 8 characters with 1 uppercase and 1 special character'); ok = false;
+      }
+
+      if (!cpw) { setErr('confirmPassword','Confirm password is required'); ok = false; }
+      else if (cpw !== pwd) { setErr('confirmPassword','Passwords do not match'); ok = false; }
+
+      if (!ok) return;
+
+      // build payload
+      const payload = {
+        first_name: firstName.value.trim(),
+        middle_name: middle.value.trim(),
+        last_name: lastName.value.trim(),
+        suffix: suffix.value,
+        email: email.value.trim(),
+        password: pwd,
+        confirm_password: cpw
+      };
+
+      const ENDPOINT = new URL('backend/register.php', window.location.href).href;
+
+      toggleBtn(true);
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+
+        let data;
+        try { data = await res.json(); }
+        catch { data = { success:false, message:'Unexpected server response.' }; }
+
+        if (!data.success) {
+          if (data.field) setErr(data.field, data.message || 'Invalid value');
+          else alert(data.message || 'Registration failed.');
+          return;
+        }
+
+        // success UI
+        document.getElementById('registerForm').reset();
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        document.getElementById('successMsg').textContent = data.message || 'Your account has been created.';
+        successModal.show();
+      } catch (err) {
+        alert('Network error. Is Apache/MySQL running, and is backend/register.php reachable?');
+      } finally {
+        toggleBtn(false);
+      }
+    });
+
+    // show/hide password
+    (function() {
+      const toggle = (btnId, inputId, iconId) => {
+        const btn  = document.getElementById(btnId);
+        const inp  = document.getElementById(inputId);
+        const icon = document.getElementById(iconId);
+        if (!btn || !inp || !icon) return;
+        btn.addEventListener('click', () => {
+          const show = inp.type === 'password';
+          inp.type = show ? 'text' : 'password';
+          icon.classList.toggle('bi-eye', !show);
+          icon.classList.toggle('bi-eye-slash', show);
+        });
+      };
+      toggle('togglePassword','password','eyeIconPassword');
+      toggle('toggleConfirmPassword','confirmPassword','eyeIconConfirm');
+    })();
+
+      document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('goLoginBtn');
+      if (!btn) return;
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();           // just in case
+        const url = new URL('login.html', document.baseURI).href;
+        window.location.assign(url);  // or window.location.replace(url);
+      });
+    });
+  </script>
+</body>
+</html>

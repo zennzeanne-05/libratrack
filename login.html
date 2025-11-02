@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LibraTrack - Login</title>
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/LibraTrack-logo.png" alt="LibraTrack Logo" style="width:45px; height:100px;">
+        <h1 class="sitename" style="font-size: 24px;">LibraTrack</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html" class="active">Login</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted d-none d-sm-block" href="index.html#menu">Browse Catalog</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Login -->
+    <section class="page-bg min-vh-100 d-flex align-items-center justify-content-center">
+      <div class="card login-card border-0 shadow-sm mx-auto" style="max-width:420px; width:100%;">
+        <div class="card-body p-5">
+
+          <!-- Logo -->
+          <div class="text-center mb-4">
+            <img src="assets/img/LibraTrack-logo.png" alt="LibraTrack Logo" width="100" height="100">
+          </div>
+
+          <!-- Heading -->
+          <h3 class="form-big-label text-center mb-4">Welcome back!</h3>
+
+          <!-- Form -->
+          <form id="loginForm" novalidate>
+            <div class="mb-3">
+              <label for="email" class="form-label form-label-login-register">Email</label>
+              <input id="email" name="email" type="email" class="form-control" required autocomplete="email" />
+              <div class="invalid-feedback" id="emailError"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label form-label-login-register">Password</label>
+              <div class="password-wrapper position-relative">
+                <input id="password" name="password" type="password" class="form-control" required autocomplete="current-password" />
+                <button type="button" id="togglePassword" class="toggle-password position-absolute top-50 end-0 translate-middle-y me-3 btn btn-link p-0" aria-label="Show password">
+                  <i class="bi bi-eye" id="eyeIcon" aria-hidden="true"></i>
+                </button>
+                <div class="invalid-feedback" id="passwordError"></div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="remember" />
+                <label class="form-label-login-register ms-1" for="remember">Remember me?</label>
+              </div>
+              <a href="forgot.html" class="form-label-login-register">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 form-button-label">Login</button>
+          </form>
+
+          <div class="text-center mt-4">
+            <a href="register.html" class="form-label-create">Create an account</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="container copyright text-center mt-4">
+      <p>© <span id="year"></span> <strong class="px-1 sitename">LibraTrack</strong> — All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Site JS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Login Logic -->
+  <script>
+    (function () {
+      const form = document.getElementById('loginForm');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+      const togglePassword = document.getElementById('togglePassword');
+      const eyeIcon = document.getElementById('eyeIcon');
+
+      // Show/hide password
+      togglePassword.addEventListener('click', function () {
+        const showing = password.type === 'password';
+        password.type = showing ? 'text' : 'password';
+        eyeIcon.classList.toggle('bi-eye', !showing);
+        eyeIcon.classList.toggle('bi-eye-slash', showing);
+      });
+
+      // Clear errors on input
+      [email, password].forEach(el => {
+        el.addEventListener('input', () => {
+          el.classList.remove('is-invalid');
+          if (el === email) emailError.textContent = '';
+          if (el === password) passwordError.textContent = '';
+        });
+      });
+
+      // Submit
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        let valid = true;
+        const emailVal = email.value.trim();
+        const pwd = password.value.trim();
+
+        // Email validation
+        if (!emailVal) {
+          email.classList.add('is-invalid');
+          emailError.textContent = 'Email address is required';
+          valid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+          email.classList.add('is-invalid');
+          emailError.textContent = 'Invalid email address';
+          valid = false;
+        }
+
+        // Password validation
+        if (!pwd) {
+          password.classList.add('is-invalid');
+          passwordError.textContent = 'Password is required';
+          valid = false;
+        }
+
+        if (!valid) return;
+
+        // Send to backend
+        const ENDPOINT = new URL('backend/login.php', window.location.href).href;
+
+        try {
+          const res = await fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ email: emailVal, password: pwd })
+          });
+
+          const data = await res.json().catch(() => ({}));
+          const msg = data.message || data.error || 'Login failed';
+
+          if (!res.ok || !data.success) {
+            if (data.field === 'email') {
+              email.classList.add('is-invalid');
+              emailError.textContent = msg;
+            } else {
+              password.classList.add('is-invalid');
+              passwordError.textContent = msg;
+            }
+            return;
+          }
+
+          // Success -> redirect
+          sessionStorage.setItem('role', data.role || '');
+          window.location.href = data.redirect || 'dashboard.html';
+        } catch (err) {
+          alert('Network error. Please try again.');
+        }
+      });
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
